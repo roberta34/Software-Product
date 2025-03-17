@@ -1,1 +1,1 @@
-This is a project made in the senior year of highschool for obtaining the certification specific for Computer Science and Mathematics students.
+This is a project made in the senior year of highschool for obtaining the certification specific for Computer Science and Mathematics students. It contains all the theory learned in high school about bidimensional arrays.
