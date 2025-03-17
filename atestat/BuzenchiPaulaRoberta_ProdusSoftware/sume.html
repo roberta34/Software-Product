@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sume parţiale</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Sume parţiale în matrice</h1>
+    </div>
+    <div class="row">
+        <div class="col-3 col-s-3 menu">
+        <ol>
+            <li><a href="index.html" target="_blank">Pagina principală</a></li>
+        </ol>
+        </div>
+        <div class="col-6 col-s-9">
+            <p>Considerăm un tablou bidimensional cu elemente numerice. În unele probleme se cere să se determine rapid suma elementelor din anumite secvențe date. Desigur, o soluție este parcurgerea tuturor elementelor din secvență și determinarea sumei, dar această operație are complexitatea <b>O(n)</b>, iar dacă numărul de sume care trebuie calculate este mare soluția poate fi inacceptabilă.</p>
+            <p>Astfel, în această situaţie putem folosi <b style="color: red;">sumele parţiale</b>. Pentru aceasta avem nevoie de o matrice auxiliară S[][].</p>
+            <p>Considerăm matricea A cu 5 linii şi 6 coloane.</p>
+            <img src="exsumpart.png">
+            <p>Pentru această matrice vrem să calculăm suma elementelor din submatricea cu colţul stânga-sus de coordonate (2,2) şi colţul din dreapta-jos de coordonate (4,4).</p>
+            <p>Folosind martricea <b>S</b>, vom obţine S[i][j] ce reprezintă suma elementelor din submatricea cu colţul stânga-sus la coordonatele (1,1) şi colţul dreapta-jos la coordonatele (i,j).</p>
+            <p>Formula prin care se construieşte matricea S:</p>
+            <img src="formulapart.png">
+            <p>Matricea sumelor parţiale pentru matricea A este:</p>
+            <img src="mats.png">
+            <p>Pentru a obţine suma elementelor din submatricea cu colţul din stânga-sus la coordonatele (is,js) şi colţul din dreapta-jos de coordonate (ii,jj) vom aplica următoarea formulă:</p>
+            <img src="formulasuma.png">
+            <p>Aceasta se explică astfel:</p>
+            <img src="explicaresume.png">
+            <p><i>*Se scade din toată submatricea de coordonate stânga-sus (1,1) şi (ii,jj) submatricile cu colţul stânga-sus (1,1) şi dreapta-jos (is-1,jj) şi cea cu colţul stânga-sus (1,1) şi dreapta-jos (ii, js-1), după care se adună submatricea cu colţul stânga-sus (1,1) şi dreapta-jos (is-1,js-1), întrucât aceasta se scade de două ori.*</i></p>
+            <h3><i>Algoritmul în C++ pentru a afla suma unei submatrici:</i></h3>
+            <img src="algsumepart.png">
+        </div>
+        <div class="col-3 col-s-12 menu">
+            <ol>
+                <li><a href="alocare_dinamica.html" target="_blank">Matrici cu alocare dinamică</a></li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

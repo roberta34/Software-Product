@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Clasificare</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Clasificarea matricilor</h1>
+    </div>
+    <div class="row">
+        <div class="col-3 col-s-3 menu">
+        <ol>
+            <li><a href="index.html" target="_blank">Pagina principală</a></li>
+            <li><a href="rotire.html" target="_blank">Rotirea matricilor</a></li>
+        </ol>
+        </div>
+        <div class="col-6 col-s-9">
+            <ol type="I">
+                <li>
+                    <h3>Matrici dreptunghiulare</h3>
+                    <p>Acestea se remarcă prin faptul că au un număr inegal de linii şi coloane, deci dacă matricea ar avea n linii şi m coloane, atunci n!=m.</p>
+                </li>
+                <li>
+                    <h3>Matrici pătratice</h3>
+                    <p>Acestea au număr egal de linii şi coloane, deci m=n.</p>
+                    <p><i>Exemple:</i></p>
+                    <div id="exemplemat">
+                        <div id="index0">
+                            <p><b>Indexare de la 0</b></p>
+                            <p>Această matrice conţine 3 linii şi 3 coloane.</p>
+                            <img src="matpat0.png">
+                            <div><p>Într-o matrice pătratică se remarcă o categorie specială de elemente, <b style="color:red">diagonalele</b>.
+                            </p></div>
+                        </div>
+                        <div id="index1">
+                            <p><b>Indexare de la 1</b></p>
+                            <p>Şi această matrice conţine 3 linii şi 3 coloane</p>
+                            <img src="matpat1.png">
+                            <p>Elementele de pe diagonale sau în zonele delimitate de diagonale respectă anumite reguli care ţin de indici.</p>
+                        </div>
+                    </div> 
+                </li>
+            </ol>
+            <ol type="a">
+                <li><b><p style="color: red;">Diagonala principală</p></b>
+                    <div id="exemplemat">
+                        <div id="index0">
+                            <p><b>Indexare de la 0</b></p>
+                            <img src="diagprinc0.png">
+                            <p id="p">i=j</p>
+                        </div>
+                        <div id="index1">
+                            <p><b>Indexare de la 1</b></p>
+                            <img src="diagprinc1.png">
+                            <p id="p">i=j</p>
+                        </div>
+                    </div>
+                    <p>Parcurgerea diagonalei principale:</p>
+                    <img src="parcurgerediag.png">
+                </li>
+                <li><b><p style="color:red">Diagonala secundară</p></b>
+                    <div id="exemplemat">
+                        <div id="index0">
+                            <p><b>Indexare de la 0</b></p>
+                            <img src="diagsecund0.png">
+                            <p id="p">i+j=n-1</p>
+                        </div>
+                        <div id="index1">
+                            <p><b>Indexare de la 1</b></p>
+                            <img src="diagsecund1.png">
+                            <p id="p">i+j=n+1</p>
+                        </div>
+                    </div>
+                    <p>Parcugerea diagonalei secundare:</p>
+                    <img src="parcurgeresecund.png">
+                </li>
+            </ol>
+            <p>Dacă n este <b>impar</b>, cele două diagonale au un element comun. Dacă n este <b>par</b>, cele două diagonale nu au elemente comune.</p>
+            <h3>Elemente delimitate de diagonala principală:</h3>
+            <div id="deasupra">
+                <p style="text-align: center;"><b><u>Deasupra diagonalei principale</b></u></p>
+                <div id="in0">
+                    <p>Indexare de la 0</p>
+                    <img src="deasuprap0.png">
+                </div>
+                <div id="in1">
+                    <p>Indexare de la 1</p>
+                    <img src="deasuprap1.png">
+                </div>
+                <p style="text-align: center;"><b>În acest caz, i este mai mic ca j.</b></p>
+            </div>
+            <br><br>
+            <div id="dedesubt">
+                <p style="text-align: center;"><b><u>Sub diagonala principală</b></u></p>
+                <div id="in0">
+                    <p>Indexare de la 0</p>
+                    <img src="subp0.png">
+                </div>
+                <div id="in1">
+                    <p>Indexare de la 1</p>
+                    <img src="subp1.png">
+                </div>
+                <p style="text-align: center;"><b>În acest caz, i este mai mare ca j.</b></p>
+            </div>
+            <h3>Elemente delimitate de diagonala secundară:</h3>
+            <div id="deasupra">
+                <p style="text-align: center;"><b><u>Deasupra diagonalei secundare</b></u></p>
+                <div id="in0">
+                    <p>Indexare de la 0</p>
+                    <img src="deasupras0.png">
+                    <p style="text-align: center;"><b>În acest caz, i+j este mai mic ca n-1.</b></p>
+                </div>
+                <div id="in1">
+                    <p>Indexare de la 1</p>
+                    <img src="deasupras1.png">
+                    <p style="text-align: center;"><b>În acest caz, i+j este mai mic ca n+1.</b></p>
+                </div>
+            </div>
+            <br><br>
+            <div id="dedesubt">
+                <p style="text-align: center;"><b><u>Sub diagonala secundară</b></u></p>
+                <div id="in0">
+                    <p>Indexare de la 0</p>
+                    <img src="subs0.png">
+                    <p style="text-align: center;"><b>În acest caz, i+j este mai mare ca n-1.</b></p>
+                </div>
+                <div id="in1">
+                    <p>Indexare de la 1</p>
+                    <img src="subs1.png">
+                </div>
+                <p style="text-align: center;"><b>În acest caz, i+j este mai mare ca n+1.</p>
+            </div>
+            <h3>Zone delimitate de diagonale:</h3>
+            <p>Diagonalele delimitează în matrice 4 zone: est, vest, nord,sud. Acestea sunt reprezentate astfel:</p>
+            <img src="zonematrice.png">
+        </div>
+        <div class="col-3 col-s-12">
+            <div class="aside">
+                <p>Tablourile bidimensionale, matricile, pot fi de două feluri:</p>
+                <ol type="a">
+                    <li><b>Matrici dreptunghiulare</b></li>
+                    <li><b>Matrici pătratice</b></li>
+                </ol>
+              </div>
+        </div>
+    </div>
+</body>
+</html>

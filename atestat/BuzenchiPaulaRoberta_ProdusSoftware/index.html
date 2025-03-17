@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tablouri bidimensionale</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="up" class="header col-12 col-s-12">
+    <h1>Tablouri bidimensionale</h1>
+  </div>
+  <div class="row">
+    <div class="col-3 col-s-3 menu">
+      <ol>
+        <li><a href="citire.html" target="_blank" title="Citirea matricilor">Citire</a></li>
+        <li><a href="parcurgere.html" target="_blank" title="Parcurgerea matricilor">Parcurgere</a></li>
+        <li><a href="spirala.html" target="_blank" title="Matrice în spirală">Matrici în spirală</a></li>
+        <li><a href="clasificare.html" target="_blank" title="Clasificarea matricilor">Clasificare</a></li>
+        <li><a href="rotire.html" target="_blank" title="Rotirea unei matrici">Rotirea matricilor</a></li>
+        
+      </ol>
+    </div>
+
+    <div class="col-6 col-s-9 center">
+      <h2>Matrici</h2>
+      <p>În limbajul de programare C++, tablourile bidimensionale reprezintă o structură de date standard, folosită pentru a stoca o colecţie de date de acelaşi tip, organizate pe linii şi coloane. Practic, o matrice este extinderea la două dimensiuni a unui vector.</p>
+      <p>Dintr-o perspectivă ușor diferită, tablourile bidimensionale sunt structuri de date alcătuite din elemente de același tip, organizate pe linii și pe coloane. Astfel, fiecare element are doi indici: un indice de linie și un indice de coloană</p>
+      <p>Astfel, declararea lor în C++ este asemănătoare cu cea a vectorilor, dar trebuie precizate două dimensiuni maximale, ce reprezintă numărul de linii şi de coloane al tabloului:</p>
+      <img height="150px" src="declarare.png">
+      <p>De exemplu:</p>
+      <img height="50px" src="exemplu.png">
+      <p>Astfel, o matrice cu 5 linii şi 6 coloane poate arăta ca cea de mai jos.</p>
+      <img class="img" src="matrice.png">
+      <p>Matricea are:</p>
+      <ul style="list-style-type: square;">
+        <li>6*5=30 de elemente</li>
+        <li>5 linii, indexate de la 0 la 4</li>
+        <li>6 coloane, indexate de la 0 la 5</li>
+      </ul>
+      <p>Astfel, pentru a ne referi la un element al matricii trebuie să ne asigurăm că indicii se află în intervalul precizat. De exemplu, a[3][5] este o expresie corectă, ce are ca valoare 3, pe când a[-1][10] este o expresie greşită.</p>
+      <h4>Legătura dintre matrici şi tablourile unidimensionale:</h4>
+      <ul style="list-style-type: disc;">
+        <li>A este întreaga matrice</li>
+        <li>A[1] este un vector, întrucât reprezintă o linie a matricii</li>
+        <li>A[2][3] este un element al matricii</li>
+      </ul>
+      <h4>Indexarea matricilor:</h4>
+      <p>Implicit, tablourile bidimensionale, la fel ca cele unidimensionale, sunt indexate de la 0 (liniile sunt indexate de la 0 la n-1 și coloanele de la 0 la m-1).Putem însă să ignorăm prima linie și prima coloană, și să considerăm tabloul indexat de la 1, adică liniile sunt indexate de la 1 la n, iar coloanele de la 1 la m. În această situație matricea trebuie declarată corespunzător.
+      </p>
+      <p>De exemplu, pentru o matrice cu 100 de linii și 100 de coloane indexată de la 0 declararea va fi:</p>
+      <img height="80px" width="50%" src="indexare0.png">
+      <p>iar pentru o matrice similară indexată de la 1 declararea va fi:</p>
+      <img height="80px" width="50%" src="indexare1.png">
+      <br><br>
+    </div>
+
+    <div class="col-3 col-s-12 menu">
+      <ol>
+        <li><a href="inmultire.html" target="_blank" title="Înmulţirea a două matrici">Înmulţirea a două matrici</a></li>
+        <li><a href="sume.html" target="_blank" title="Sume parţiale în matrice">Sume parţiale</a></li>
+        <li><a href="alocare_dinamica.html" target="_blank" title="Matrici cu alocare dinamică">Matrici cu alocare dinamică</a></li>
+        <li><a href="subprograme.html" target="_blank" title="Matrici cu programare orientată pe obiect">Subprograme cu matrici</a></li>
+        <li><a href="algoritmi.html" target="_blank" title="Algoritmi care utilizează matrici">Algoritmi ce folosesc matrici</a></li>
+        <li><a href="algoritmi.html" target="_blank" title="Algoritmi care utilizează matrici">Algoritmi ce folosesc matrici</a></li>
+
+      </ol>
+  </div>
+</body>
+</html>

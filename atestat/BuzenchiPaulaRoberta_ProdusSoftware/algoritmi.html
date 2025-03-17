@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Algoritmi</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Algoritmi ce folosesc matrici</h1>
+    </div>
+    <div class="row">
+        <div class="col-3 col-s-3 menua">
+            <ol>
+            <li><a href="#fill">Algoritmul lui Fill</a></li>
+            <li><a href="#Lee">Algoritmul lui Lee</a></li>
+            <li><a href="#pascal">Triunghiul lui Pascal cu matrice</a></li>
+            <li><a href="#saritura_cal">Problema săriturii calului</a></li>
+            <li><a href="#regine">Problema reginelor</a></li>
+            <li><a href="#drumuri">Numărul de drumuri din matrice</a></li>
+            <li><a href="#adiacenta">Matrici de adiacenţă</a></li>
+            <li><a href="index.html">Pagina principală</a></li>
+            </ol>
+        </div>
+        <div class="col-6 col-s-9">
+            <div id="fill">
+                <h3 style="text-align: center; color:darkblue">1.Algoritmul lui Fill</h3>
+                <br>
+                <p>Acesta mai este numit şi algoritmul de umplere. Astfel, având în vedere enunţul precizat anterior, programul va determina numărul de continente.</p>
+                <p>Un prim pas pentru conceperea algoritmului, este <b>identificarea vecinilor</b>. Aşa cum precizează problema, elementele se învecinează pe linie sau pe coloană, deci pentru un element <b>a[i][j]</b> vom avea 4 vecini: <b>a[i-1][j]</b>, <b>a[i][j-1]</b>, <b>a[i+1][j]</b> şi <b>a[i][j+1]</b>.</p>
+                <img src="vecini.png">
+                <p>Astfel, o reprezentare a vecinilor lui a[i][j] este:</p>
+                <img src="vecini2.png">
+                <p>În acest sens, putem utiliza vectorii de coordonate sau de deplasare pentru a identifica mai uşor vecinii:</p>
+                <img src="vectoricoord.png">
+                <p>Totodată, trebuie să avem în vedere ca vecinii unui element să se afle în matrice.</p>
+                <h3><i>Algoritmul lui Fill în C++:</i></h3>
+                <img src="fill.png">
+                <br>
+            </div>
+            <div id="Lee">
+                <h3  style="text-align: center; color:darkblue">2.Algoritmul lui Lee</h3>
+                <br>
+                <p>Având în vedere problema enunţată mai sus, ni se dau dimensiunile matricei, numărul de copaci din parc, coordonatele fiecăruia, cât şi coordonatele porţilor. Aşadar, cerinţa problemei este aflarea numărului minim de dale necesar pentru construirea aleei.</p>
+                <p>În acest sens, vom folosi algoritmul lui Lee. Vom marca în matrice elementele libere cu <b>0</b>, iar copacii cu <b>-1</b>. Poziţia de start va fi marcată cu <b>1</b>. Pentru fiecare <b>k=1,2,3,...</b> vom analiza elementele marcate cu valoarea <b>k</b> şi vom marca toţi vecinii săi liberi şi nemarcaţi cu <b>k+1</b>. </p>
+                <img src="exemplulee.png">
+                <h3><i>Algoritmul lui Lee în C++:</i></h3>
+                <img src="alglee.png">
+                <br>
+            </div>
+            <div id="pascal">
+                <h3  style="text-align: center; color:darkblue">3.Triunghiul lui Pascal cu matrice</h3>
+                <br>
+                <p>Acesta este foarte utilizat în matematică la diverse probleme de combinatorică.</p>
+                <p>O reprezentare vizuală a acestuia este:</p>
+                <img src="triunghipascal.png">
+                <p>Se poate observa că fiecare element este egal cu suma celor două elemente vecine de deasupra.</p>
+                <p>Totodată, triunghiul poate fi reaşezat astfel:</p>
+                <img src="matricepascal.png">
+                <p>Astfel, formula pentru fiecare termen al matricei este:</p>
+                <img src="formulamatrice.png">
+                <p>De asemenea, matematic vorbind, relaţia de mai sus este de fapt calculul combinărilor:</p>
+                <img src="combinari.png">
+                <p>Aşadar, putem calcula linia <b>n</b> a triunghiului lui Pascal folosindu-ne de matrici, o soluţie care este mai eficientă decât calcularea propriu-zisă a combinărilor.</p>
+                <h3><i>Algoritmul în C++ pentru afişarea liniei <b>n</b> din triunghiul lui Pascal:</i></h3>
+                <img src="algoritmpascal.png">
+                <br>
+            </div>
+            <div id="saritura_cal">
+                <h3  style="text-align: center; color:darkblue">4.Problema săriturii calului</h3>
+                <br>
+                <p>Problema enunţată presupune afişarea unei matrici de <b>n</b> linii şi <b>m</b> coloane, fiecare element al matricei reprezentând valoarea pasului la care se ajunge în acel punct, sau 0 dacă nu s-a ajuns.</p>
+                <p>Rezolvarea poate fi scrisă în două moduri, atât folosind metoda <b>Greedy</b>, cât şi <b>Backtracking</b>. Cea care urmează a fi prezentată utilizează metoda <i>Greedy</i>.</p>
+                <p>Un prim pas în rezolvare este <b>identificarea vecinilor</b>, întrucât calul se deplasează pe tabla de şah în formă de <b>L</b>.</p>
+                <img src="veciniL.png">
+                <p>Principiul de rezolvare al problemei constă în găsirea pentru un element curent <b>a[i][[j]</b> a unui vecin cu număr <i>minim</i> de vecini.</p>
+                <p>Astfel, vom folosi <b>vectorii de coordonate</b> pentru a afla vecinii elementelor.</p>
+                <img src="vectoriL.png">
+                <p>În mod similar, fiecare vecin trebuie să se afle în matrice.</p>
+                <h3><i>Algoritmul în C++ pentru afişarea matricii corespunzătoare săriturii calului:</i></h3>
+                <img src="saritura_calului1.png">
+                <br>
+                <img src="saritura_calului2.png">
+                <br>
+            </div>
+            <div id="regine">
+                <h3  style="text-align: center; color:darkblue">5.Problema reginelor</h3>
+                <br>
+                <p>Problema presupune afişarea unei matrici de <b>n</b> linii şi <b>n</b> coloane ce conţine drept caractere <b><i>R</i></b> sau <b><i>*</i></b>, unde 'R' ilustrează poziţia ocupată de o regină, iar '*' reprezintă o poziţie liberă.</p>
+                <p>În rezolvarea problemei vom folosi metoda <b>Backtracking-ului</b>.</p>
+                <p>O posibilă soluţie a problemei:</p>
+                <img src="exempluregine.png">
+                <p>Considerăm stiva <b>st[]</b> în care se reţine coloane pe care se găseşte reginade pe linia k.</p>
+                <p>Astfel, vom avea în vedere câteva condiţii:</p>
+                <ol>
+                    <li>1<=st[k]<=n</li>
+                    <li>st[k]!=st[i], oricare ar fi i∈[1,k-1](reginele sunt pe coloane diferite)</li>
+                    <li>|st[k]-st[i]|!=|k-i|(condiţia ca reginele să nu fie pe aceeaşi diagonală) </li>
+                    <li>k=n</li>
+                </ol>
+                <h3><i>Algoritmul în C++ pentru afişarea matricii corespunzătoare poziţionării celor n regine:</i></h3>
+                <img src="bktregine.png">
+                <br>
+            </div>
+            <div id="drumuri">
+                <h3  style="text-align: center; color:darkblue">6.Numărul de drumuri în matrice</h3>
+                <br>
+                <p>Problema presupune afişarea termenului <b>a[n][m]</b> din matricea <b>A</b>, ce reprezintă numărul de moduri de a ajunge în acel punct.</p>
+                <p>În rezolvarea problemei vom folosi metoda <b>programării dinamice</b>.</p>
+                <p>Astfel, se observă că orice element <b>a[i][j]</b> este, de fapt, <b>a[i-1][j]+a[i][j-1]</b>, iar dacă <b>i=1 sau j=1</b>, atunci <b>a[i][j]=1</b>.</p>
+                <p>De exemplu, dacă avem <b>n=3</b> şi <b>m=4</b> matricea va fi:</p>
+                <img src="exemplupd.png">
+                <p>Aşadar, formula pentru matrice este:</p>
+                <img src="matricepd.png">
+                <h3><i>Algoritmul în C++ pentru determinarea numărului de drumuri din matrice:</i></h3>
+                <img src="algoritmpd.png">
+                <br>
+            </div>
+            <div id="adiacenta">
+                <h3 style="text-align: center; color:darkblue">7.Matrici de adiacenţă</h3>
+                <br>
+                <p>Matricile sunt utile pentru reprezentarea în memorie a diverselor tipuri de grafuri.</p>
+                <p>Deşi nu reprezintă cea mai eficientă metodă, matricile sunt des utilizate în lucrul cu grafurile.</p>
+                <ol type="A">
+                    <li><b>Grafuri neorientate</b>
+                        <ul style="list-style-type: circle;">
+                            <li>este o matrice pătratică, cu <b>n</b> linii şi <b>n</b> coloane, unde n este numărul de noduri al grafului</li>
+                            <li>aceasta conţine elemente din mulţimea {0,1}</li>
+                            <li><b>1</b>-există muchie de la <b>i</b> la <b>j</b>, <b>0</b>-nu există muchie de la <b>i</b> la <b>j</b></li>
+                            <li>este simetrică faţă de diagonala principală</li>
+                            <li>pe diagonala principală are doar elemente de <b>0</b>, întrucât nu există muchie de la un nod la el însuşi, deci nu există bucle</li>
+                            <li>gradul unui vârf <b>x</b> este egal cu numărul de elemente de <b>1</b> de pe linia sau coloana x</li>
+                            <li>suma elementelor din matricea de adiacenţă este egală cu dublul numărului de muchii al grafului</li>
+                            <p><b>Exemplu:</b></p>
+                            <img src="grafneorientat.png">
+                        </ul>
+                    </li>
+                    <li><b>Grafuri orientate</b>
+                        <ul style="list-style-type: circle;">
+                            <li>este tot o matrice pătratică, cu <b>n</b> linii şi <b>n</b> coloane, unde n este numărul de noduri al grafului</li>
+                            <li>conţine doar <b>0</b> şi <b>1</b></li>
+                            <li><b>1</b>-există un arc de la <b>i</b> la <b>j</b>, <b>0</b>-nu există arc de la <b>i</b> la <b>j</b></li>
+                            <li><b>nu</b> este simetrică faţă de diagonala principală</li>
+                            <li>pe diagonala principală are doar elemente de <b>0</b></li>
+                            <li>numărul de elemente de <b>1</b> de pe linia <b>x</b> reprezintă <b>gradul exterior al nodului x</b></li>
+                            <li>numărul de elemente de <b>1</b> de pe coloana <b>x</b> reprezintă <b>gradul interior al nodului x</b></li>
+                            <p><b>Exemplu:</b></p>
+                            <img src="graforientat.png">
+                        </ul>
+                    </li>
+                    <li><b>Grafuri ponderate</b>
+                        <ul style="list-style-type: circle;">
+                            <li>este tot o matrice pătratică, cu <b>n</b> linii şi <b>n</b> coloane, unde n este numărul de noduri al grafului</li>
+                            <li>aceasta conţine atât elemente nule, acolo unde nu există muchie de <b>i</b> la <b>j</b>, altfel elementul a[i][j] are o valoare mai mare sau egală cu 1</li>
+                            <li>pe diagonala principală are doar elemente de <b>0</b></li>
+                            <p><b>Exemplu:</b></p>
+                            <img src="grafponderat.png">
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-3 col-s-12 menua">
+            
+            <div class="algoritm">
+                <h3 style="text-align: center;">Algoritmul lui Fill</h3>
+                <p style="text-align: center;"><i><b>Problemă</b>: Se dă o matrice cu <b>n</b> linii și <b>m</b> coloane și elemente 0 sau 1, care reprezintă harta unei planete, în care <b>1</b> înseamnă uscat, iar <b>0</b> înseamnă apă. Două elemente <b>1</b> care se învecinează pe linie sau pe coloană (nu și pe diagonală) fac parte din același continent.Să se determine câte continente sunt pe hartă.</i></p>
+            </div>
+            <div class="algoritm">
+                <h3 style="text-align: center;">Algoritmul lui Lee</h3>
+                <p style="text-align: center;"><i><b>Problemă</b>: Parcul unui oraş are forma unui pătrat cu latura de <b>n</b> metri și este înconjurat de un gard care are exact două porți. S-a realizat o hartă a parcului și s-a trasat pe hartă un caroiaj care împarte parcul în <b>nxn</b> zone pătrate cu latura de 1 metru. Astfel harta parcului are aspectul unei <b>matrice pătratice cu n linii și n coloane</b>.Acesta este împărţit în zone. O astfel de zonă poate să conțină un copac sau este liberă. Edilii orașului doresc să paveze cu un <b>număr minim</b> de dale pătrate cu latura de 1 metru zonele libere (fără copaci) ale parcului, astfel încât să se obțină o alee continuă de la o poartă la alta.</i></p>
+            </div>
+            <div class="algoritm">
+                <h3 style="text-align: center;">Triunghiul lui Pascal cu matrice</h3>
+                <p style="text-align: center;"><i><b>Triunghiul lui Pascal</b> este un tablou triunghiular cu numere naturale, în care fiecare element aflat pe laturile triunghiului are valoarea 1, iar celelalte elemente sunt egale cu suma celor două elemente vecine, situate pe linia de deasupra. Astfel,elementele de pe linia n sunt coeficienți binomiali ai dezvoltării: <b>(a+b)<sup>n</sup></b></i><i>, ce reprezintă <b>binomul lui Newton</b>.</i></p>
+            </div>
+            <div class="algoritm">
+                <h3 style="text-align: center;">Problema săriturii calului</h3>
+                <p style="text-align: center;"><i><b>Problemă</b>:Se consideră o tablă de şah cu <b>n</b> linii şi <b>m</b> coloane. La o poziţie dată se află un cal de şah, acesta putându-se deplasa pe tablă în modul specific acestei piese de şah <b>(în L)</b>.Să se determine o modalitate de parcurgere a tablei de către calul dat, astfel încât acesta să nu treacă de două ori prin aceeaşi poziţie. Parcurgerea constă într-o matrice cu <b>n</b> linii și <b>m</b> coloane, fiecare element al matricei având valoarea pasului la care se ajunge în acel element, sau 0, dacă nu s-a ajuns.</i></p>
+            </div>
+            <div class="algoritm">
+                <h3 style="text-align: center;">Problema reginelor</h3>
+                <p style="text-align: center;"><i><b>Problemă</b>: Se consideră o tablă de șah de dimensiune n. Să se plaseze pe tablă n regine astfel încât să nu existe două regine care să se atace.</i></p>
+            </div>
+            <div class="algoritm">
+                <h3 style="text-align: center;">Numărul de drumuri în matrice</h3>
+                <p style="text-align: center;"><i><b>Problemă</b>: Considerăm o matrice (labirint, teren, etc.) cu <b>n</b> linii și <b>m</b> coloane și un mobil aflat inițial în elementul de coordonate <b>(1,1)</b> – colțul stânga-sus, care se poate deplasa din elementul curent, de coordonate <b>(i, j)</b> în unul dintre elementele de coordonate <b>(i+1, j)</b> – aflat pe linia următoare, și <b>(i, j+1)</b> – aflat pe următoarea coloană. Să se determine în câte moduri poate ajunge mobilul în elementul de coordonate <b>(n, m)</b> – colțul dreapta-jos.</i></p>
+            </div>
+            <div class="algoritm">
+                <h3 style="text-align: center;">Matrici de adiacenţă</h3>
+                <p style="text-align: center;"><i><b>Grafurile neorientate, orientate şi ponderate</b> pot fi reprezentate în memorie prin intermediul unei matrici de adiacenţă cu <b>n</b> linii, ce reprezintă numărul de noduri al grafului, iar muchia <b>(i,j)</b>, dacă există, este indicată prin marcarea elementului a[i][j] cu o valoare nenulă.</i></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
