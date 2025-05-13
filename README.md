@@ -36,7 +36,7 @@ Each topic is explained through clear theory, visual examples, and code snippets
 
 - C++ examples to bridge theory and code
 
-** Technologies Used **
+**Technologies Used**
 
 - HTML5
 
