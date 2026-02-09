@@ -40,7 +40,7 @@ Each topic is explained through clear theory, visual examples, and code snippets
 
 - HTML5
 
-- CSS3
+- CSS
 
 - Responsive design with media queries
 
